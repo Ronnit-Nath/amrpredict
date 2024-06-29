@@ -1,0 +1,7 @@
+.vercel
+venv/          # Virtual environment directory
+.vscode/       # Visual Studio Code settings
+.idea/         # JetBrains IDE settings
+node_modules/  # Node.js dependencies
+.log          # Log files
+.pyc          # Python compiled files
