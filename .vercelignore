@@ -2,6 +2,7 @@
 venv/
 
 # Ignore other development-related files and directories
+.git/
 .vscode/
 .idea/
 node_modules/
