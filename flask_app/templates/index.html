@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMR Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 >AMR Predict</h1>
+        <p>AMR Predict uses machine learning models to predict antibiotic resistance based on DNA sequences used to train it. All Results may not be accurate</p>
+        <p>For more information, please visit <a href="github.com">GitHub</a>  </p>
+        <form id="predictForm">
+            <label for="modelType">Choose a model:</label>
+            <select id="modelType" name="modelType">
+                <option value="logistic">Logistic Regression</option>
+                <option value="random_forest">Random Forest</option>
+            </select>
+            <br><br>
+            <label for="inputType">Choose input type:</label>
+            <select id="inputType" name="inputType">
+                <option value="direct">Enter DNA sequences directly</option>
+                <option value="csv">Load sequences from a CSV file</option>
+                <option value="fasta">Load sequences from a FASTA file</option>
+            </select>
+            <br><br>
+            <div id="sequenceInput">
+                <label for="sequences">Enter DNA sequences (Only ATGC Allowed) (comma-separated):</label>
+                <textarea id="sequences" name="sequences" rows="5" cols="50"></textarea>
+            </div>
+            <div id="fileInput" style="display: none;">
+                <label for="file">Choose file:</label>
+                <input type="file" id="file" name="file">
+            </div>
+            <br><br>
+            <button type="button" onclick="submitForm()">Predict</button>
+        </form>
+        <div id="results"></div>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <p>made with coffee</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
