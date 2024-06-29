@@ -1,4 +1,5 @@
 # Ignore virtual environment
+.venv/
 venv/
 
 # Ignore other development-related files and directories
@@ -10,3 +11,4 @@ node_modules/
 .pyc
 
 # Ignore specific large files or directories not needed for deployment
+.git/objects   # Exclude Git objects folder
