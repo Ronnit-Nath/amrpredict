@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <h1 >AMR Predict</h1>
+        <h1>AMR Predict</h1>
         <p>AMR Predict uses machine learning models to predict antibiotic resistance based on DNA sequences used to train it. All Results may not be accurate</p>
-        <p>For more information, please visit <a href="github.com">GitHub</a>  </p>
+        <p>For more information, please visit <a href="github.com">GitHub</a></p>
         <form id="predictForm">
             <label for="modelType">Choose a model:</label>
             <select id="modelType" name="modelType">
@@ -26,7 +26,7 @@
             </select>
             <br><br>
             <div id="sequenceInput">
-                <label for="sequences">Enter DNA sequences (Only ATGC Allowed) (comma-separated):</label>
+                <label for="sequences">Enter DNA sequences (comma-separated):</label>
                 <textarea id="sequences" name="sequences" rows="5" cols="50"></textarea>
             </div>
             <div id="fileInput" style="display: none;">
@@ -38,7 +38,7 @@
         </form>
         <div id="results"></div>
         <div id="loader" class="loader" style="display: none;"></div>
-        <p>made with coffee</p>
+        <p>Made with coffee</p>
     </div>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>

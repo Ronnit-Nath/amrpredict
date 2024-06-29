@@ -7,10 +7,9 @@ import os
 
 app = Flask(__name__)
 
-MODELS_DIR = "../models"
+MODELS_DIR = os.path.join(os.path.dirname(__file__), '..', 'models')  # Adjust path as per your directory structure
 
 def load_model(model_type):
-    global MODELS_DIR
     if model_type == 'logistic':
         model_path = os.path.join(MODELS_DIR, 'logistic_regression_model.joblib')
         vectorizer_path = os.path.join(MODELS_DIR, 'logistic_regression_vectorizer.joblib')
