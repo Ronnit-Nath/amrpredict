@@ -89,3 +89,12 @@ document.getElementById('inputType').addEventListener('change', function() {
         document.getElementById('fileInput').style.display = 'block';
     }
 });
+
+// Menu toggle
+document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('menu').classList.add('active');
+});
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+    document.getElementById('menu').classList.remove('active');
+});

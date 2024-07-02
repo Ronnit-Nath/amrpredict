@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <header>
+       <div class="logo">AMR Predict.</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu" id="menu">
+        <div class="menu-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+
+            <div class="logo1">AMR Predict.</div>
+            <ul >
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+
+        </div>
+    </div>
     <div class="container">
-        <h1>AMR Predict</h1>
+        <h1 >AMR Predict</h1>
         <p>AMR Predict uses machine learning models to predict antibiotic resistance based on DNA sequences used to train it. All Results may not be accurate</p>
         <p>For more information, please visit <a href="github.com">GitHub</a></p>
         <form id="predictForm">
@@ -36,7 +58,9 @@
             <br><br>
             <button type="button" onclick="submitForm()">Predict</button>
         </form>
-        <div id="results"></div>
+        <div id="resultsContainer">
+            <div id="results"></div>
+        </div>
         <div id="loader" class="loader" style="display: none;"></div>
         <p>Made with coffee</p>
     </div>
