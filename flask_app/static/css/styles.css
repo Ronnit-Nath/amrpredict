@@ -1,6 +1,7 @@
 /* General Styles */
 body {
-    font-family: 'Space Grotesk', sans-serif;
+    /*font-family: 'Space Grotesk', sans-serif; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
