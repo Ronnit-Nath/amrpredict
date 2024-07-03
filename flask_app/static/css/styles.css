@@ -111,7 +111,7 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
-    white-space: pre-wrap; /* Allow wrapping of long lines */
+    white-space: pre-line; /* Allow wrapping of long lines */
 
 }
 
@@ -186,8 +186,9 @@ header {
 
 .logo1 {
     color: #ffffff;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bolder;
+    margin-bottom: 30px;
 }
 
 .hamburger {
