@@ -16,7 +16,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(101, 101, 101, 0.1);
     padding: 20px;
-    padding-top: 40px;
+    padding-top: 100px;
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
@@ -155,13 +155,15 @@ li {
 header {
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 97.8%;
     background-color: #4cae4c;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .logo {
