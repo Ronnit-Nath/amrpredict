@@ -8,7 +8,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 115vh;
+    height: 110vh;
+
 }
 
 .container {
@@ -19,8 +20,17 @@ body {
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
-    padding-top: 25%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+
 }
+
+@media only screen and (max-width: 428px){
+    .container {
+        margin-top: 50%;
+    }
+  }
+  
 
 h1 {
 
