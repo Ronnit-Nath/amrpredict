@@ -218,6 +218,12 @@ header {
     transition: left 0.3s ease;
 }
 
+@media only screen and (max-width: 428px){
+    .menu {
+        width: 75%;
+    }
+  }
+
 .menu-content {
     display: flex;
     flex-direction: column;
