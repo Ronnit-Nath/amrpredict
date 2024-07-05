@@ -1,7 +1,7 @@
 import joblib
 import pandas as pd
 from Bio import SeqIO
-import re
+from data_preparation import DataPreparation
 
 def load_saved_model(model_type):
     """
@@ -24,35 +24,7 @@ def load_saved_model(model_type):
         raise ValueError("Invalid model type specified.")
     return model, vectorizer
 
-def validate_sequence(sequence):
-    """
-    Validate if a given DNA sequence is valid.
-
-    Parameters:
-    - sequence (str): DNA sequence to validate.
-
-    Returns:
-    - bool: True if the sequence is valid, False otherwise.
-    """
-    # Check if the sequence contains only valid DNA bases (A, C, G, T)
-    valid_bases = set('ACGT')
-    if not all(base in valid_bases for base in sequence.upper()):
-        return False
-    
-    # Check if the sequence is not a repetitive single base sequence
-    if sequence.upper().count('A') == len(sequence) or \
-       sequence.upper().count('C') == len(sequence) or \
-       sequence.upper().count('G') == len(sequence) or \
-       sequence.upper().count('T') == len(sequence):
-        return False
-    
-    # Check if the sequence contains 'N', which is not a valid base
-    if 'N' in sequence.upper():
-        return False
-    
-    return True
-
-def predict_resistance(sequence, model, vectorizer):
+def predict_resistance(sequence, model, vectorizer, data_preparation_instance):
     """
     Predict if a given DNA sequence is resistant or not based on the loaded model.
 
@@ -60,12 +32,13 @@ def predict_resistance(sequence, model, vectorizer):
     - sequence (str): DNA sequence to predict resistance for.
     - model: Loaded machine learning model.
     - vectorizer: Loaded feature vectorizer.
+    - data_preparation_instance (DataPreparation): Instance of DataPreparation class.
 
     Returns:
     - tuple: Prediction result and probability ('Resistant', 'Not Resistant', or 'ERROR: NOT A DNA SEQUENCE', probability).
     """
-    # Check if the input is a valid DNA sequence
-    if not validate_sequence(sequence):
+    # Check if the input is a valid DNA sequence using DataPreparation
+    if not data_preparation_instance.validate_sequence(sequence):
         return "ERROR: NOT A DNA SEQUENCE", None
 
     sequence = sequence.upper()  # Convert sequence to uppercase
@@ -87,6 +60,25 @@ def main():
     print("AMR Predict uses machine learning models to predict antibiotic resistance based on DNA sequences.")
     print("Our training dataset includes thousands of sequences annotated with resistance labels.")
     print("Currently, we use Logistic Regression and Random Forest models for prediction.")
+    
+    # Initialize DataPreparation with file paths
+    file_paths = [
+        '../data/genomic_data.csv', 
+        '../data/genomic_data.fasta'
+    ]
+    aro_categories_paths = [
+        '../data/aro_categories.tsv',
+    ]
+    aro_index_paths = [
+        '../data/aro_index.tsv',
+    ]
+    card_json_paths = [
+        '../data/card.json',
+    ]
+    
+    data_prep = DataPreparation(file_paths, aro_categories_paths, aro_index_paths, card_json_paths)
+    X_train, X_test, y_train, y_test = data_prep.prepare_data()
+
     while True:
         print("\nChoose a model:")
         print("1. Logistic Regression")
@@ -148,7 +140,7 @@ def main():
 
             results = []
             for idx, sequence in enumerate(sequences, start=1):
-                result, probability = predict_resistance(sequence, model, vectorizer)
+                result, probability = predict_resistance(sequence, model, vectorizer, data_prep)
                 if probability is not None:
                     results.append(f"{idx}. {sequence}: {result} (Probability: {probability:.2f})")
                 else:

@@ -8,3 +8,5 @@ node_modules/  # Node.js dependencies
 .pyc          # Python compiled files
 misc/
 requirements.txt
+src/rf_model.py
+NANF.txt
