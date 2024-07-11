@@ -1,15 +1,16 @@
-/* General Styles */
 body {
-    /*font-family: 'Space Grotesk', sans-serif; */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family: 'Space Grotesk', sans-serif; 
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
+  max-width: 420px;
+  padding: 32px;
+  margin: 60px auto;
     justify-content: center;
     align-items: center;
-    height: 110vh;
-
+    height: 100vh;
 }
 
 .container {
@@ -17,33 +18,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(101, 101, 101, 0.1);
     padding: 20px;
+    padding-top: 100px;
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 15%;
-    margin-bottom: 10%;
-
 }
-
-@media only screen and (max-width: 428px){
-    .container {
-        margin-top: 50%;
-    }
-  }
-  
 
 h1 {
-
+    margin-bottom: 30px;
     text-align: center;
     color: #333;
 }
 
-.h-FEATURE{
-    padding-top: 0%;
-    text-align: center;
-    color: #333;
-    margin-bottom: 50%;
-}
+
 
 p {
     text-align: center;
@@ -93,84 +80,26 @@ button:hover {
     background-color: #4cae4c;
 }
 
-
-
-
-#resultsContainer {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    max-height: 300px; /* Set a max height for the results container */
-    overflow-y: auto; /* Enable vertical scrolling for results */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(101, 101, 101, 0.1);
+    padding: 20px;
+    padding-top: 100px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    
 }
 
-#results {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
 
-#results h2 {
-    margin-bottom: 10px;
-    color: #333;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    white-space: pre-line; /* Allow wrapping of long lines */
 
-}
 
-li {
-    background-color: transparent;
-    border: none ;
-    border-radius: 0;
-    margin-bottom: 10px; /* You can adjust or remove this if you want */
-    padding: 0; /* You can adjust or remove this if you want */
-}
-
-.error {
-    color: red;
-    font-weight: bold;
-}
-
-.loader {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-    margin: 0 auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.sequence-wrapper {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-    vertical-align: bottom;
-}
-
-.results-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.results-list li {
-    margin-bottom: 10px;
-}
 
 /* Header and Menu Styles */
 header {
-    position:fixed;
+    position: absolute;
     top: 0;
     width: 97.8%;
     background-color: #4cae4c;
@@ -179,8 +108,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .logo {
@@ -193,9 +122,8 @@ header {
 
 .logo1 {
     color: #ffffff;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bolder;
-    margin-bottom: 30px;
 }
 
 .hamburger {
@@ -225,14 +153,6 @@ header {
     transition: left 0.3s ease;
 }
 
-@media only screen and (max-width: 428px){
-    .menu {
-        width: 75%;
-    }
-  }
-
-
-  
 .menu-content {
     display: flex;
     flex-direction: column;
@@ -282,7 +202,8 @@ header {
     left: 0;
 }
 
+
 .foot-text{
-    text-decoration: none;
-    color: black;
+    text-decoration: dotted;
+    color: white;
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMR Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/" class="foot-text" >AMR Predict.</a></div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu" id="menu">
+        <div class="menu-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div class="logo1">AMR Predict.</div>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="#">FEATURES</a></li>
+                <!-- <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">CONTACT</a></li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h1>coming soon<span class="dot">.</span></h1>
+        <p>Made with coffee ☕ </p>
+
+       </div>
+
+ <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('menu').classList.add('active');
+        });
+        
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('menu').classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>
