@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMR Predict</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
@@ -21,10 +22,11 @@
 
             <div class="logo1">AMR Predict.</div>
             <ul >
-                <li style=""><a href="#">HOME</a></li>
-                <li><a href="#">PROJECTS</a></li>
+                <li style=""><a href="/">HOME</a></li>
+                <li><a href="/features">FEATURES</a></li>
+                <!--<li><a href="#">PROJECTS</a></li>
                 <li><a href="#">TEAM</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">CONTACT</a></li> -->
             </ul>
 
         </div>
@@ -62,7 +64,7 @@
             <div id="results"></div>
         </div>
         <div id="loader" class="loader" style="display: none;"></div>
-        <p>Made with coffee</p>
+        <p ><a href="https://github.com" class="foot-text"> Made with coffee ☕<a></p>
     </div>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>

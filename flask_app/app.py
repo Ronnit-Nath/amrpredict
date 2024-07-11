@@ -61,6 +61,10 @@ def predict_resistance(sequences, model, vectorizer):
 def index():
     return render_template('index.html')
 
+@app.route('/features')
+def results():
+    return render_template('features.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
