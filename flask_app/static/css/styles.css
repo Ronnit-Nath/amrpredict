@@ -281,3 +281,8 @@ header {
 .menu.active {
     left: 0;
 }
+
+.foot-text{
+    text-decoration: none;
+    color: black;
+}
